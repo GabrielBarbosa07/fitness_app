@@ -33,7 +33,7 @@ const Navbar = () => {
             borderBottom: "3px solid #FF2625",
           }}
         >
-          Exercicios
+          Exercícios
         </a>
       </Stack>
     </Stack>
