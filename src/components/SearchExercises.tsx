@@ -1,14 +1,54 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { exerciseOptions, fetchData } from "../utils/fetchData";
+
+interface ExerciceProps {
+  bodyPart: string;
+  equipment: string;
+  gifUrl: string;
+  id: string;
+  name: string;
+  target: string;
+}
 
 const SearchExercises = () => {
   const [search, setSearch] = useState("");
+  const [exercises, setExercises] = useState([]);
+  const [bodyPart, setBodyParts] = useState([]);
+
+  const exercisesDbUrl = "https://exercisedb.p.rapidapi.com/exercises";
+  const exercisesBodyPartListUrl =
+    "https://exercisedb.p.rapidapi.com/exercises/bodyPartList";
+
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      const bodyPartsData = await fetchData(
+        exercisesBodyPartListUrl,
+        exerciseOptions
+      );
+
+      setBodyParts(["all", ...bodyPartsData]);
+    };
+
+    fetchExercisesData();
+  }, []);
 
   const handleSearch = async () => {
-    if(search){
-      // const exercisesData = await fetchData()
+    if (search) {
+      const exercisesData = await fetchData(exercisesDbUrl, exerciseOptions);
+
+      const searchedExercises = exercisesData.filter(
+        (exercise: ExerciceProps) =>
+          exercise.name.toLowerCase().includes(search) ||
+          exercise.target.toLowerCase().includes(search) ||
+          exercise.equipment.toLowerCase().includes(search) ||
+          exercise.bodyPart.toLowerCase().includes(search)
+      );
+
+      setSearch("");
+      setExercises(searchedExercises);
     }
-  }
+  };
 
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
