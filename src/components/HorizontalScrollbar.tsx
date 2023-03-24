@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { Box, Typography } from "@mui/material";
 import Slider from "react-slick";
 
 import BodyPart from "./BodyPart";
+
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
 
@@ -24,9 +23,9 @@ function SamplePrevArrow({ className, onClick }: any) {
 }
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
-  speed: 500,
+  speed: 5000,
   slidesToShow: 3,
   slidesToScroll: 3,
   nextArrow: <SampleNextArrow />,

@@ -5,8 +5,6 @@ import Icon from "../assets/icons/gym.png";
 
 const BodyPart = ({ item, bodyPart, setBodyPart }: any) => (
   <Box
-    alignItems="center"
-    justifyContent="center"
     className="bodyPart-card"
     sx={{
       borderTop: bodyPart === item ? "4px solid #FF2625" : "",
@@ -16,6 +14,10 @@ const BodyPart = ({ item, bodyPart, setBodyPart }: any) => (
       height: "282px",
       cursor: "pointer",
       gap: "47px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
     }}
     onClick={() => {
       setBodyPart(item);
@@ -26,11 +28,11 @@ const BodyPart = ({ item, bodyPart, setBodyPart }: any) => (
     <Typography
       fontSize="24px"
       fontWeight="bold"
-      fontFamily="Alegreya"
+      fontFamily="Roboto"
       color="#3A1212"
       textTransform="capitalize"
+      letterSpacing={3}
     >
-     
       {item}
     </Typography>
   </Box>
