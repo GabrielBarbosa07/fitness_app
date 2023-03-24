@@ -1,39 +1,46 @@
 import React, { useContext } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { Box, Typography } from "@mui/material";
+import Slider from "react-slick";
 
+import BodyPart from "./BodyPart";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
 
-const LeftArrow = () => {
-  const { scrollPrev } = useContext(VisibilityContext);
-
+function SampleNextArrow({ className, onClick }: any) {
   return (
-    <Typography onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="right-arrow" />
-    </Typography>
-  );
-};
-
-const RightArrow = () => {
-  const { scrollNext } = useContext(VisibilityContext);
-
-  return (
-    <Typography onClick={() => scrollNext()} className="left-arrow">
+    <Typography onClick={onClick} className={className}>
       <img src={RightArrowIcon} alt="right-arrow" />
     </Typography>
   );
+}
+
+function SamplePrevArrow({ className, onClick }: any) {
+  return (
+    <Typography onClick={onClick} className={className}>
+      <img src={LeftArrowIcon} alt="right-arrow" />
+    </Typography>
+  );
+}
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
 };
 
-const HorizontalScrollbar = ({ data }:any) => (
-  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-    {data.map((item:any) => (
-      <Box
-      >
-        {item}
+const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }: any) => (
+  <Slider {...settings}>
+    {data.map((item: any) => (
+      <Box key={item.id || item} p="0 40px">
+        <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
       </Box>
     ))}
-  </ScrollMenu>
+  </Slider>
 );
 
 export default HorizontalScrollbar;
