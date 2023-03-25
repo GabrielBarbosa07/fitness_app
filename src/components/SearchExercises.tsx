@@ -3,7 +3,11 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
-interface ExerciceProps {
+export interface ExercisesProps{
+  exercise: ExercisesProps[]
+} 
+
+export interface ExerciceProps {
   bodyPart: string;
   equipment: string;
   gifUrl: string;
