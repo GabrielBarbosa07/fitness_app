@@ -30,7 +30,38 @@ const settings = {
   slidesToScroll: 3,
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
+  initialSlide: 1,
+
+  responsive: [
+    {
+      breakpoint: 960,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
+      },
+    },
+  ],
 };
+
+// const settings = {
+//   dots: false,
+//   infinite: true,
+//   speed: 500,
+//   slidesToShow: 3,
+//   slidesToScroll: 3,
+//   nextArrow: <SampleNextArrow />,
+//   prevArrow: <SamplePrevArrow />,
+// };
 
 const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }: any) => (
   <Slider {...settings}>

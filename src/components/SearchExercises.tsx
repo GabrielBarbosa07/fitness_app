@@ -3,9 +3,9 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
 
-export interface ExercisesProps{
-  exercise: ExercisesProps[]
-} 
+export interface ExercisesProps {
+  exercise: ExercisesProps[];
+}
 
 export interface ExerciceProps {
   bodyPart: string;
@@ -31,7 +31,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
         exerciseOptions
       );
 
-      setBodyParts(["all", ...bodyPartsData]);
+      setBodyParts(["todos", ...bodyPartsData]);
     };
 
     fetchExercisesData();
@@ -65,7 +65,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
         Exercícios Incríveis que você deveria conhecer
       </Typography>
 
-      <Box position="relative" mb="72px">
+      <Box position="relative" mb="72px" >
         <TextField
           sx={{
             input: {
@@ -101,8 +101,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
         </Button>
       </Box>
 
-      <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
-        <HorizontalScrollbar
+      <Box sx={{ position: "relative", width: "100%", p: "20px", }}>
+        <HorizontalScrollbar 
           data={bodyParts}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}
