@@ -43,7 +43,7 @@ const settings = {
       },
     },
     {
-      breakpoint: 640,
+      breakpoint: 682,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -53,24 +53,16 @@ const settings = {
   ],
 };
 
-// const settings = {
-//   dots: false,
-//   infinite: true,
-//   speed: 500,
-//   slidesToShow: 3,
-//   slidesToScroll: 3,
-//   nextArrow: <SampleNextArrow />,
-//   prevArrow: <SamplePrevArrow />,
-// };
-
 const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }: any) => (
-  <Slider {...settings}>
-    {data.map((item: any) => (
-      <Box key={item.id || item} p="0 40px">
-        <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
-      </Box>
-    ))}
-  </Slider>
+  <Box sx={{ width: "100%", p: { xs: "0 20px", lg: "40px" } }}>
+    <Slider {...settings}>
+      {data.map((item: any) => (
+        <Box key={item.id || item}>
+          <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
+        </Box>
+      ))}
+    </Slider>
+  </Box>
 );
 
 export default HorizontalScrollbar;

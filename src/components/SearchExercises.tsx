@@ -76,7 +76,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
             },
           }}
           value={search}
-          onChange={({ target }) => setSearch(target.value.toLowerCase())}
+          onChange={({ target }:any) => setSearch(target.value.toLowerCase())}
           type="text"
           placeholder="Procure Exercícios"
         />
