@@ -5,6 +5,7 @@ import BodyPart from "./BodyPart";
 
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
+import ExerciseCard from "./ExerciseCard";
 
 function SampleNextArrow({ className, onClick }: any) {
   return (
@@ -52,13 +53,22 @@ const settings = {
     },
   ],
 };
+const arrayTest = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
 
 const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }: any) => (
-  <Box sx={{ width: "100%", p: { xs: "0 20px", lg: "40px" } }}>
+  <Box sx={{ width: "100%", p: { xs: "0 10px", lg: "40px" } }}>
     <Slider {...settings}>
-      {data.map((item: any) => (
-        <Box key={item.id || item}>
-          <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
+      {arrayTest.map((item) => (
+        <Box key={item}>
+          {bodyPart ? (
+            <BodyPart
+              item={item}
+              setBodyPart={setBodyPart}
+              bodyPart={bodyPart}
+            />
+          ) : (
+            <ExerciseCard exercise={item} />
+          )}
         </Box>
       ))}
     </Slider>
