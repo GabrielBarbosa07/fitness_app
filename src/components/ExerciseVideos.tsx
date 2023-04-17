@@ -1,4 +1,4 @@
-import { Typography, Box, Stack } from "@mui/material";
+import { Typography, Box, Grid, Stack } from "@mui/material";
 import Loader from "./Loader";
 
 const ExerciseVideos = ({ exerciseVideos, exerciseDetail }: any) => {
@@ -7,20 +7,19 @@ const ExerciseVideos = ({ exerciseVideos, exerciseDetail }: any) => {
   return (
     <Box sx={{ marginTop: { lg: "203px", xs: "20px" } }} p="20px">
       <Typography
-        sx={{ fontSize: { lg: "44px", xs: "25px" } }}
+        sx={{ fontSize: { lg: "44px", xs: "25px" }, textAlign: "center" }}
         fontWeight={700}
         color="#000"
         mb="33px"
       >
-        Assista{" "}
+        Assista videos sobre o{" "}
         <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
           {exerciseDetail.name}
-        </span>{" "}
-        Videos de exercicios
+        </span>
       </Typography>
       <Stack
         sx={{ flexDirection: { lg: "row" }, gap: { lg: "110px", xs: "0px" } }}
-        justifyContent="flex-start"
+        justifyContent="center"
         flexWrap="wrap"
         alignItems="center"
       >
