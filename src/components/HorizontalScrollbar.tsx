@@ -59,7 +59,7 @@ const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }: any) => (
   <Box sx={{ width: "100%", p: { xs: "0 10px", lg: "40px" } }}>
     <Slider {...settings}>
       {data.map((item:any) => (
-        <Box key={item}>
+        <Box key={item} >
           {bodyPart ? (
             <BodyPart
               item={item}

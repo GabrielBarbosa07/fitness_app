@@ -53,9 +53,15 @@ const Exercises = ({ exercises, setExercises, bodyPart }: any) => {
       mt="50px"
       p="20px"
     >
-      <Typography variant="h3" mb="46px">
-        Mostrando Resultados
-      </Typography>
+      {exercises.length === 0 ? (
+        <Typography variant="h3" mb="46px" fontWeight={700}>
+          Nenhum exercício foi encontrado. Tente Novamente!
+        </Typography>
+      ) : (
+        <Typography variant="h3" mb="46px" fontWeight={700}>
+           Exercícios Disponíveis!
+        </Typography>
+      )}
 
       <Stack
         direction="row"

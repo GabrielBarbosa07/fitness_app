@@ -20,7 +20,10 @@ const SimilarExercises = ({
       </span>{" "}
       Semelhante
     </Typography>
-    <Stack direction="row" sx={{ p: {xs:"0 36px",lg:6}, position: "relative" }}>
+    <Stack
+      direction="row"
+      sx={{ p: { xs: "0 36px", lg: 6 }, position: "relative" }}
+    >
       {targetMuscleExercises.length !== 0 ? (
         <HorizontalScrollbar data={targetMuscleExercises} />
       ) : (
@@ -43,7 +46,10 @@ const SimilarExercises = ({
       </span>{" "}
       Semelhante
     </Typography>
-    <Stack direction="row" sx={{ p: {xs:"0 36px", lg:6}, position: "relative" }}>
+    <Stack
+      direction="row"
+      sx={{ p: { xs: "0 36px", lg: 6 }, position: "relative" }}
+    >
       {equipmentExercises.length !== 0 ? (
         <HorizontalScrollbar data={equipmentExercises} />
       ) : (
