@@ -1,8 +1,42 @@
-import { Typography, Box, Grid, Stack } from "@mui/material";
+import { Typography, Box, Stack } from "@mui/material";
 import Loader from "./Loader";
 
-const ExerciseVideos = ({ exerciseVideos, exerciseDetail }: any) => {
+export interface ExerciseVideosAndDetailProps {
+  exerciseVideos: [
+    {
+      channelId: string;
+      channelName: string;
+      description: string;
+      lengthText: string;
+      publishedTimeText: string;
+      thumbnails: [
+        {
+          height: number;
+          url: string;
+          width: string;
+        }
+      ];
+      title: string;
+      videoId: string;
+      viewCountText: string;
+    }
+  ];
+  exerciseDetail: {
+    bodyPart: string;
+    equipment: string;
+    gifUrl: string;
+    id: string;
+    name: string;
+    target: string;
+  };
+}
+
+const ExerciseVideos = ({
+  exerciseVideos,
+  exerciseDetail,
+}: ExerciseVideosAndDetailProps) => {
   if (!exerciseVideos.length) return <Loader />;
+  console.log({ ExerciseVid: exerciseVideos, ExerciseDetails: exerciseDetail });
 
   return (
     <Box sx={{ marginTop: { lg: "203px", xs: "20px" } }} p="20px">
@@ -18,7 +52,7 @@ const ExerciseVideos = ({ exerciseVideos, exerciseDetail }: any) => {
         </span>
       </Typography>
       <Stack
-        sx={{ flexDirection: { lg: "row" }, gap: { lg: "110px", xs: "0px" } }}
+        sx={{ flexDirection: { sm: "row" }, gap: { sm: "70px", xs: "0px" } }}
         justifyContent="center"
         flexWrap="wrap"
         alignItems="center"
@@ -46,7 +80,10 @@ const ExerciseVideos = ({ exerciseVideos, exerciseDetail }: any) => {
                 >
                   {item.video.title}
                 </Typography>
-                <Typography fontSize="14px" color="#000">
+                <Typography
+                  sx={{ fontSize: { lg: "18px", xs: "15px" } }}
+                  color="#a4a3a3"
+                >
                   {item.video.channelName}
                 </Typography>
               </Box>

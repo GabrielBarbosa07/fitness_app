@@ -3,8 +3,9 @@ import { Typography, Stack, Button } from "@mui/material";
 import BodyPartImage from "../assets/icons/body-part.png";
 import TargetImage from "../assets/icons/target.png";
 import EquipmentImage from "../assets/icons/equipment.png";
+import { ExerciseVideosAndDetailProps } from "./ExerciseVideos";
 
-const Detail = ({ exerciseDetail }: any) => {
+const Detail = ({ exerciseDetail }: ExerciseVideosAndDetailProps) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
 
   const extraDetail = [
@@ -37,7 +38,7 @@ const Detail = ({ exerciseDetail }: any) => {
           {name}
         </Typography>
         <Typography
-          sx={{ fontSize: { lg: "24px", xs: "18px" } }}
+        sx={{ fontSize: { lg: "24px", xs: "18px" }, textAlign:"justify" }}
           color="#4F4C4C"
         >
           Exercícios mantêm você forte.{" "}
