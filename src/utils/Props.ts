@@ -1,5 +1,5 @@
 export interface ExercisesProps {
-    exercise: ExercisesProps[];
+    exercise: ExerciceProps[];
     targetMuscleExercises:ExercisesProps[];
     equipmentExercises:ExercisesProps[]
 }
