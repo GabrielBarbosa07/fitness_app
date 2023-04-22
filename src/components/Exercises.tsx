@@ -3,7 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material";
 
 import { exerciseOptions, fetchData } from "../utils/fetchData";
-import { ExerciceProps } from "./SearchExercises";
+import { ExerciceProps } from "../utils/Props";
 import ExerciseCard from "./ExerciseCard";
 
 const Exercises = ({ exercises, setExercises, bodyPart }: any) => {

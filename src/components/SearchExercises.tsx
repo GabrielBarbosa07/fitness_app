@@ -2,19 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import HorizontalScrollbar from "./HorizontalScrollbar";
-
-export interface ExercisesProps {
-  exercise: ExercisesProps[];
-}
-
-export interface ExerciceProps {
-  bodyPart: string;
-  equipment: string;
-  gifUrl: string;
-  id: string;
-  name: string;
-  target: string;
-}
+import { ExerciceProps } from "../utils/Props";
 
 const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
   const [search, setSearch] = useState("");
@@ -65,7 +53,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
         Exercícios Incríveis que você deveria conhecer
       </Typography>
 
-      <Box position="relative" mb="72px" >
+      <Box position="relative" mb="72px">
         <TextField
           sx={{
             input: {
@@ -76,7 +64,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
             },
           }}
           value={search}
-          onChange={({ target }:any) => setSearch(target.value.toLowerCase())}
+          onChange={({ target }: any) => setSearch(target.value.toLowerCase())}
           type="text"
           placeholder="Procure Exercícios"
         />
@@ -101,8 +89,8 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: any) => {
         </Button>
       </Box>
 
-      <Box sx={{ position: "relative", width: "100%", p: "20px", }}>
-        <HorizontalScrollbar 
+      <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
+        <HorizontalScrollbar
           data={bodyParts}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}

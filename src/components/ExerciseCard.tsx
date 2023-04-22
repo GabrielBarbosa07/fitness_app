@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button, Stack, Typography } from "@mui/material";
+import { ExerciceProps } from "../utils/Props";
 
-const ExerciseCard = ({ exercise } :any) => (
+const ExerciseCard = ({ exercise }: { exercise: ExerciceProps }) => (
   <Link className="exercise-card" to={`/exercise/${exercise.id}`}>
     <img src={exercise.gifUrl} alt={exercise.name} loading="lazy" />
     <Stack direction="row">

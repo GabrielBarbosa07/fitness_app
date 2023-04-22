@@ -53,13 +53,12 @@ const settings = {
     },
   ],
 };
-const arrayTest = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
 
 const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }: any) => (
   <Box sx={{ width: "100%", p: { xs: "0 10px", lg: "40px" } }}>
     <Slider {...settings}>
-      {data.map((item:any) => (
-        <Box key={item} >
+      {data.map((item: any) => (
+        <Box key={item}>
           {bodyPart ? (
             <BodyPart
               item={item}
