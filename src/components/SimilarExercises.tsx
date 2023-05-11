@@ -26,7 +26,7 @@ const SimilarExercises = ({
         direction="row"
         sx={{ p: { xs: "0 36px", lg: 6 }, position: "relative" }}
       >
-        {targetMuscleExercises.length !== 0 ? (
+        {targetMuscleExercises?.length !== 0 ? (
           <HorizontalScrollbar data={targetMuscleExercises} />
         ) : (
           <Loader />
@@ -52,7 +52,7 @@ const SimilarExercises = ({
         direction="row"
         sx={{ p: { xs: "0 36px", lg: 6 }, position: "relative" }}
       >
-        {equipmentExercises.length !== 0 ? (
+        {equipmentExercises?.length !== 0 ? (
           <HorizontalScrollbar data={equipmentExercises} />
         ) : (
           <Loader />

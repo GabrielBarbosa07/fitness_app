@@ -1,7 +1,7 @@
 export interface ExercisesProps {
-    exercise: ExerciceProps[];
-    targetMuscleExercises:ExercisesProps[];
-    equipmentExercises:ExercisesProps[]
+    exercise?: ExerciceProps[];
+    targetMuscleExercises?:ExercisesProps[];
+    equipmentExercises?:ExercisesProps[]
 }
 
 export interface ExerciceProps {
@@ -14,7 +14,7 @@ export interface ExerciceProps {
 }
 
 export interface ExerciseVideosAndDetailProps {
-    exerciseVideos: [
+    exerciseVideos?: [
         {
             channelId: string;
             channelName: string;
