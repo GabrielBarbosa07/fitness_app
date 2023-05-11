@@ -1,4 +1,4 @@
-import { Box,  Typography, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 
 import HeroBannerImage from "../assets/images/banner.png";
 
@@ -12,7 +12,7 @@ const HeroBanner = () => {
       <Typography color="#FF2625" fontWeight="600" fontSize="26px">
         Fitness Club
       </Typography>
-      
+
       <Typography
         fontWeight={700}
         sx={{ fontSize: { lg: "44px", xs: "40px" } }}
@@ -34,7 +34,7 @@ const HeroBanner = () => {
       >
         Explorar exercícios
       </Button>
-      
+
       <Typography
         fontWeight={600}
         fontSize="200px"

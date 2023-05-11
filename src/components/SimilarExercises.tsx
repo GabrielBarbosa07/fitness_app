@@ -8,10 +8,6 @@ const SimilarExercises = ({
   targetMuscleExercises,
   equipmentExercises,
 }: ExercisesProps) => {
-  {
-    console.log({ "Target": targetMuscleExercises, "Equip": equipmentExercises });
-  }
-
   return (
     <Box sx={{ mt: { lg: "100px", xs: "0px" } }}>
       <Typography
