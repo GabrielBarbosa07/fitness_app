@@ -1,12 +1,16 @@
 import { Typography, Box, Stack } from "@mui/material";
 import Loader from "./Loader";
-import { ExerciseVideosAndDetailProps } from "../utils/Props";
+import { ExerciseDetailProps, ExerciseVideosProps } from "../utils/Props";
 
 const ExerciseVideos = ({
   exerciseVideos,
   exerciseDetail,
-}: ExerciseVideosAndDetailProps) => {
+}: {
+  exerciseVideos: ExerciseVideosProps[];
+  exerciseDetail: ExerciseDetailProps;
+}) => {
   if (!exerciseVideos.length) return <Loader />;
+  console.log({"videos":exerciseVideos,"detail": exerciseDetail});
 
   return (
     <Box sx={{ marginTop: { lg: "203px", xs: "20px" } }} p="20px">
@@ -18,7 +22,7 @@ const ExerciseVideos = ({
       >
         Assista videos sobre o{" "}
         <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
-          {exerciseDetail.name}
+          {exerciseDetail?.name}
         </span>
       </Typography>
       <Stack
@@ -33,7 +37,7 @@ const ExerciseVideos = ({
             <a
               key={index}
               className="exercise-video"
-              href={`https://www.youtube.com/watch?v=${item.video.videoId}`}
+              href={`https://www.youtube.com/watch?v=${item.video.title}`}
               target="_blank"
               rel="noreferrer"
             >

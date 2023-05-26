@@ -6,10 +6,13 @@ import { exerciseOptions, fetchData, youtubeOptions } from "../utils/fetchData";
 import Detail from "../components/Detail";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from "../components/SimilarExercises";
+import { ExerciseVideosProps } from "../utils/Props";
 
 const ExerciseDetail = () => {
-  const [exerciseDetail, setExerciseDetail] = useState({});
-  const [exerciseVideos, setExerciseVideos] = useState([]);
+  const [exerciseDetail, setExerciseDetail] = useState();
+  const [exerciseVideos, setExerciseVideos] = useState<ExerciseVideosProps[]>(
+    []
+  );
   const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
   const [equipmentExercises, setEquipmentExercises] = useState([]);
   const { id } = useParams();

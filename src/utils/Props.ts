@@ -1,7 +1,7 @@
 export interface ExercisesProps {
     exercise?: ExerciceProps[];
-    targetMuscleExercises?:ExercisesProps[];
-    equipmentExercises?:ExercisesProps[]
+    targetMuscleExercises?: ExercisesProps[];
+    equipmentExercises?: ExercisesProps[]
 }
 
 export interface ExerciceProps {
@@ -13,8 +13,8 @@ export interface ExerciceProps {
     target: string;
 }
 
-export interface ExerciseVideosAndDetailProps {
-    exerciseVideos?: [
+export interface ExerciseVideosProps {
+    exerciseVideos: [
         {
             channelId: string;
             channelName: string;
@@ -33,12 +33,14 @@ export interface ExerciseVideosAndDetailProps {
             viewCountText: string;
         }
     ];
-    exerciseDetail: {
-        bodyPart: string;
-        equipment: string;
-        gifUrl: string;
-        id: string;
-        name: string;
-        target: string;
-    };
+
+}
+
+export interface ExerciseDetailProps {
+    bodyPart: string;
+    equipment: string;
+    gifUrl: string;
+    id: string;
+    name: string;
+    target: string;
 }
